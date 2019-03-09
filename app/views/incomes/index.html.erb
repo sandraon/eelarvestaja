@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Sissetulekud</h3>
+
+<div class="kirjed kirjed-sisse">
+    <% @incomes.each do |income| %>
+    <ul class="list-group list-group-horizontal">         
+        <li><%= income.kuupaev.strftime('%d.%m.%Y') %></li>
+        <li><%= income.selgitus %></li>
+        <li><%= number_with_precision(income.summa, precision: 2) %></li>
+        <li><%= link_to image_tag("edit.png"), edit_income_path(income) %></li>
+        <li><%= link_to image_tag("delete.png"), income, method: :delete, data: { confirm: 'Oled sa kindel?' } %></li>
+    </ul>
+    <% end %>
+</div>
+
+<br>
+<%= will_paginate @incomes %>
+<br>
+<a href="/incomes/new" class="btn btn-success" name="addincome">Lisa uus sissetulek</a>
+<br><br>
+<%= link_to 'Tagasi', root_path %>

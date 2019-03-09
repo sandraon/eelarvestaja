@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Summa:</strong>
+  <%= @outcome.summa %>
+</p>
+
+<p>
+  <strong>Selgitus:</strong>
+  <%= @outcome.selgitus %>
+</p>
+
+<p>
+  <strong>Kuupäev:</strong>
+  <%= @outcome.kuupaev %>
+</p>
+
+<p>
+  <strong>Makstud:</strong>
+  <%= @outcome.makstud %>
+</p>
+
+<p>
+  <strong>Igakuine:</strong>
+  <%= @outcome.igakuine %>
+</p>
+
+<%= link_to 'Muuda', edit_outcome_path(@outcome) %> |
+<%= link_to 'Tagasi', root_path %>

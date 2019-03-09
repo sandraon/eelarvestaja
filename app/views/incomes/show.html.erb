@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Summa:</strong>
+  <%= @income.summa %>
+</p>
+
+<p>
+  <strong>Selgitus:</strong>
+  <%= @income.selgitus %>
+</p>
+
+<p>
+  <strong>Kuupaev:</strong>
+  <%= @income.kuupaev %>
+</p>
+
+<p>
+  <strong>Laekunud:</strong>
+  <%= @income.laekunud %>
+</p>
+
+<p>
+  <strong>Igakuine:</strong>
+  <%= @income.igakuine %>
+</p>
+
+<%= link_to 'Muuda', edit_income_path(@income) %> |
+<%= link_to 'Tagasi', root_path %>

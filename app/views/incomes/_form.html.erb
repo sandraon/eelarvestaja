@@ -1,0 +1,43 @@
+<%= form_with(model: income, local: true) do |form| %>
+  <% if income.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+      <ul>
+      <% income.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :summa %>
+    <%= form.text_field :summa, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :selgitus %>
+    <%= form.text_field :selgitus, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :kuupaev %>
+    <%= form.date_select :kuupaev, :use_month_names => ['Jaanuar', 'Veebruar', 'Märts', 'Aprill', 'Mai', 'Juuni', 'Juuli', 'August', 'September', 'Oktoober', 'November', 'Detsember'], class: 'form-control' %>
+  </div>
+
+  <div class="field form-group form-check">
+    <%= form.check_box :laekunud, class: 'form-check-input' %>
+    <%= form.label :laekunud %>
+  </div>
+
+  <div class="field form-group form-check">
+    <%= form.check_box :igakuine, class: 'form-check-input' %>
+    <%= form.label :igakuine %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Lisa sissetulek', :class => 'btn btn-success' %>
+    <%= link_to 'Loobu', root_path, :class => 'btn btn-danger' %>
+  </div>
+<% end %>

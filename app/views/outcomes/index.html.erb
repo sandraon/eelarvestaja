@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Väljaminekud</h3>
+
+<div class="kirjed">
+    <% @outcomes.each do |outcome| %>
+    <ul class="list-group list-group-horizontal">         
+        <li><%= outcome.kuupaev.strftime('%d.%m.%Y') %></li>
+        <li><%= outcome.selgitus %></li>
+        <li><%= number_with_precision(outcome.summa, precision: 2) %></li>
+        <li><%= link_to image_tag("edit.png"), edit_outcome_path(outcome) %></li>
+        <li><%= link_to image_tag("delete.png"), outcome, method: :delete, data: { confirm: 'Oled sa kindel?' } %></li>
+    </ul>
+    <% end %>
+</div>
+
+<br>
+<%= will_paginate @outcomes %>
+<br>
+<a href="/outcomes/new" class="btn btn-success" name="addoutcome">Lisa uus väljaminek</a>
+<br><br>
+<%= link_to 'Tagasi', root_path %>

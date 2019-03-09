@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  summa: 1.5
+  selgitus: MyString
+  kuupaev: 2019-03-09
+  makstud: false
+  igakuine: false
+
+two:
+  summa: 1.5
+  selgitus: MyString
+  kuupaev: 2019-03-09
+  makstud: false
+  igakuine: false

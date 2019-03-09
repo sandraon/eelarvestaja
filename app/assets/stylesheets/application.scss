@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *
+ */
+
+ @import 'bootstrap';
+ 
+ .kirjed ul {
+    list-style-type: none;
+    margin: 0 5;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid grey ;
+    width: 100%;
+}
+
+.kirjed ul li {
+    float: left;
+    margin-right: 5%;
+}
+
+.kirjed ul li:nth-child(1) {
+    width: 18%;
+}
+.pealkiri ul li:nth-child(1) {
+    width: 18%;
+}
+.kirjed ul li:nth-child(2) {
+    width: 38%;
+}
+.pealkiri ul li:nth-child(2) {
+    width: 38%;
+}
+.kirjed ul li:nth-child(3) {
+    width: 12%;
+    color: red;
+    text-align: right;
+}
+
+.kirjed ul li:nth-child(4) {
+    width: 2px;
+}
+
+.kirjed-sisse ul li:nth-child(3) {
+    width: 12%;
+    color: green;
+}
+
+.pealkiri ul li:nth-child(3) {
+    color: black;
+}
+
+.fixed-bottom {
+    text-align: center;
+    font-size: 12px;
+    background-color: #C8C8C8;
+    padding-top: 10px;
+}
+.fixed-top {
+    background-color: #C8C8C8 !important;
+    height: 60px;
+}
+
+.outcomes, .incomes {
+    margin-bottom: 30px;
+}
+
+body {
+    background-color: #E8E8E8;
+}
+
+.content {
+    padding-top: 60px;
+}

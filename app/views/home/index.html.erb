@@ -1,0 +1,41 @@
+<div class="alert alert light" role="alert">
+    <p id="notice"><%= notice %></p>
+</div>
+    <div class="outcomes">
+        <h4>Viimased väljaminekud</h4>
+        <div class="kirjed">
+            <% @outcomes.each do |outcome| %>
+            <ul class="list-group list-group-horizontal">         
+                <li><%= outcome.kuupaev.strftime('%d.%m.%Y') %></li>
+                <li><%= outcome.selgitus %></li>
+                <li><%= number_with_precision(outcome.summa, precision: 2) %></li>
+                <li><%= link_to image_tag("edit.png"), edit_outcome_path(outcome) %></li>
+                <li><%= link_to image_tag("delete.png"), outcome, method: :delete, data: { confirm: 'Oled sa kindel?' } %></li>
+            </ul>
+            <% end %>
+            <a href="/outcomes">Vaata kõiki</a>
+        </div>
+    </div>
+    
+    <div class="incomes">
+        <h4>Viimased sissetulekud</h4>
+        <div class="kirjed kirjed-sisse">
+            <% @incomes.each do |income| %>
+            <ul class="list-group list-group-horizontal">         
+                <li><%= income.kuupaev.strftime('%d.%m.%Y') %></li>
+                <li><%= income.selgitus %></li>
+                <li><%= number_with_precision(income.summa, precision: 2) %></li>
+                <li><%= link_to image_tag("edit.png"), edit_income_path(income) %></li>
+                <li><%= link_to image_tag("delete.png"), income, method: :delete, data: { confirm: 'Oled sa kindel?' } %></li>
+            </ul>
+            <% end %>
+            <a href="/incomes">Vaata kõiki</a>
+        </div>
+    </div>
+    
+    
+        
+        
+        
+        <a href="/incomes/new" class="btn btn-success" name="addincome">Lisa sissetulek</a>
+        <a href="/outcomes/new" class="btn btn-danger" name="addoutcome">Lisa väljaminek</a> 
