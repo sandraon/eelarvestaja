@@ -32,15 +32,11 @@
 .kirjed ul li:nth-child(1) {
     width: 18%;
 }
-.pealkiri ul li:nth-child(1) {
-    width: 18%;
-}
+
 .kirjed ul li:nth-child(2) {
     width: 38%;
 }
-.pealkiri ul li:nth-child(2) {
-    width: 38%;
-}
+
 .kirjed ul li:nth-child(3) {
     width: 12%;
     color: red;
@@ -54,10 +50,6 @@
 .kirjed-sisse ul li:nth-child(3) {
     width: 12%;
     color: green;
-}
-
-.pealkiri ul li:nth-child(3) {
-    color: black;
 }
 
 .fixed-bottom {
