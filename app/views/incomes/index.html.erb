@@ -15,7 +15,7 @@
 </div>
 
 <br>
-<%= will_paginate @incomes %>
+<%= will_paginate @incomes, :previous_label => 'Eelmine', :next_label => 'Järgmine' %>
 <br>
 <a href="/incomes/new" class="btn btn-success" name="addincome">Lisa uus sissetulek</a>
 <br><br>

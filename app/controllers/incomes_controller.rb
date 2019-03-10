@@ -1,10 +1,9 @@
 class IncomesController < ApplicationController
   before_action :set_income, only: [:show, :edit, :update, :destroy]
-
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.paginate(:page => params[:page], :per_page => 20)
+    @incomes = Income.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /incomes/1
@@ -71,4 +70,5 @@ class IncomesController < ApplicationController
     def income_params
       params.require(:income).permit(:summa, :selgitus, :kuupaev, :laekunud, :igakuine)
     end
+  
 end

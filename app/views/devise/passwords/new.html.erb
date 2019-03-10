@@ -1,0 +1,17 @@
+<h2>Kas unustasid parooli?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field form-group">
+    <%= f.label :email, 'E-posti aadress' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Saada mulle juhised", class: 'btn btn-success' %>
+  </div>
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+<%= link_to 'Tagasi', url_for(:back) %>

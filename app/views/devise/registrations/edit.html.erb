@@ -1,0 +1,43 @@
+<h2>Muuda kasutaja andmeid</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field form-group">
+    <%= f.label :email, 'E-posti aadress' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :password, 'Uus parool' %> <i>(jäta tühjaks, kui sa ei soovi parooli muuta)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+    <% if @minimum_password_length %>
+      <em><%= @minimum_password_length %> tähemärki on nõutud</em>
+    <% end %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :password_confirmation, 'Parooli kinnitus' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :current_password, 'Praegune parool' %> <i>(parooli on vaja muudatuste tegemiseks)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Muuda", class: 'btn btn-success' %>
+  </div>
+<% end %>
+<br>
+
+<h3>Kustuta kasutaja</h3>
+
+<p>Kas soovid kasutaja kustutada? <%= button_to "Kustuta kasutaja", registration_path(resource_name), data: { confirm: "Kas sa oled kindel?" }, method: :delete, class: 'btn btn-danger' %></p>
+
+<%= link_to "Tagasi", url_for(:back) %>

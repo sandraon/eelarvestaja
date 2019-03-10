@@ -18,10 +18,22 @@
       <header>
           <nav class="navbar fixed-top navbar-light bg-light">
               <a class="navbar-brand" href="/"><img src="/assets/money.png" style="width: 32px; margin-right: 5px">EELARVESTAJA</a>
+              <ul class="nav navbar-nav navbar-right">
+              <% if user_signed_in? %>
+                <li><%= link_to current_user.email, edit_user_registration_path %></li>
+                <li><%= link_to "Logi välja", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Logi sisse", new_user_session_path %></li>
+              <% end %>
+            </ul>
           </nav>
+          
       </header>
       
       <div class="content">
+        <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
+        <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
+        <br>
         <%= yield %>
       </div>
       
